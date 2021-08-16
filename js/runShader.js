@@ -36,8 +36,8 @@ function render(time) {
     }
 
     const uniforms = {
-        //iTime: time * 0.001,
-        iTime: 1.69,
+        iTime: time * 0.001,
+        //iTime: 2.1,
         iResolution: [gl.canvas.width, gl.canvas.height],
         backgroundA: texBackgroundA,
         backgroundB: texBackgroundB
@@ -54,7 +54,7 @@ function render(time) {
     }
     
     const bufferTexUniform = {
-        buffer: fbi.attachments[0]
+        dropBuffer: fbi.attachments[0]
     };
 
 

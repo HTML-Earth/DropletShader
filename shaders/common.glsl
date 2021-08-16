@@ -33,7 +33,7 @@ const Droplet drops[] = Droplet[](
     
 const float ringSinMult = 300.0;
 const float ringSinAdd = 0.0;
-const float warpAmount = 4.0;
+const float warpAmount = 6.0;
 
 float getLoopTime(float iTime) {
     float loopTime = mod(floor(iTime * frameRate) * frameDelta, startPause + duration + endPause);

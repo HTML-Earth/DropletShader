@@ -16,10 +16,8 @@ const arrays = {
 
 const bufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 
-const texBackgroundA = twgl.createTexture(gl, {src: "bg_a_hd.png", flipY: 1, wrap: gl.CLAMP_TO_EDGE});
-const texBackgroundB = twgl.createTexture(gl, {src: "bg_b_hd.png", flipY: 1, wrap: gl.CLAMP_TO_EDGE});
-
-//const texBuffer = twgl.createTexture(gl, {src: "bg_a.jpg"});
+const texBackgroundA = twgl.createTexture(gl, {src: "textures/bg_a_hd.png", flipY: 1, wrap: gl.CLAMP_TO_EDGE});
+const texBackgroundB = twgl.createTexture(gl, {src: "textures/bg_b_hd.png", flipY: 1, wrap: gl.CLAMP_TO_EDGE});
 
 const attachments = [
   {format: gl.RGBA, level: 0}

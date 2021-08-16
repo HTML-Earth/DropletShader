@@ -9,7 +9,7 @@ if (!twgl.isWebGL2(gl)) {
 
 // FETCH LOCAL SHADER FILES
 var list = [];
-var shaders = ['./vert.glsl', './common.glsl', './buffer.glsl', './frag.glsl'];
+var shaders = ['./shaders/vert.glsl', './shaders/common.glsl', './shaders/buffer.glsl', './shaders/frag.glsl'];
 
 const vs = 0;
 const common = 1;

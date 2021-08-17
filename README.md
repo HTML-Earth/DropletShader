@@ -23,5 +23,6 @@ Some parameters have multiple values. Just add a `,` between each:
 - ``warpAmount`` this parameter controls how extreme the warp effect is (default = 6.0)
 - ``bg_a``/``bg_b`` set to `true` or `false` to enable/disable the background (default = false for bg_a and true for bg_b)
 - ``drop0``/``drop1``/``drop2``/``drop3`` set timing and position for one of the droplets
+
 Default drop values:
 `drop0=0.2,0.5,0.9&drop1=0.4,0.2,0.1&drop2=0.6,0.5,0.5&drop3=0.8,0.8,0.1`

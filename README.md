@@ -2,6 +2,8 @@
 
 Shader recreation of droplet transition effect from Abe's Oddysee/Exoddus.
 
+Preview here:
+[https://html-earth.github.io/DropletShader/](https://html-earth.github.io/DropletShader/)
 
 # Parameters
 Different shader parameters can be used by appending to the url.

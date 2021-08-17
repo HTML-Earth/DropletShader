@@ -2,10 +2,19 @@ out vec4 fragColor;
 
 uniform vec2 iResolution;
 uniform float iTime;
-  
+
+const float ringSinMult = 300.0;
+
+//const Droplet drops[] = Droplet[](
+//    Droplet(0.2, vec2(0.5,0.9)),
+//    Droplet(0.4, vec2(0.2,0.1)),
+//    Droplet(0.6, vec2(0.5,0.5)),
+//    Droplet(0.8, vec2(0.8,0.1)));
+//
 void main()
 {
-vec2 fragCoord = gl_FragCoord.xy;
+    vec2 fragCoord = gl_FragCoord.xy;
+    float invDur = 1.0 / duration;
 
     float time = getLoopTime(iTime);
 
@@ -15,6 +24,12 @@ vec2 fragCoord = gl_FragCoord.xy;
     
     vec2 uv = fragCoord / iResolution.x;
     uv *= actualAspect;
+
+    Droplet drops[4];
+    drops[0] = Droplet(dropTimings[0], dropPositions[0]);
+    drops[1] = Droplet(dropTimings[1], dropPositions[1]);
+    drops[2] = Droplet(dropTimings[2], dropPositions[2]);
+    drops[3] = Droplet(dropTimings[3], dropPositions[3]);
 
     //Droplet Masks
     float dropEffectMask = 0.0;
@@ -29,7 +44,7 @@ vec2 fragCoord = gl_FragCoord.xy;
         float ringFadeOut = clamp(1.0 - dropTime * 1.5, 0.0, 1.0);
         ringFadeOut *= ringFadeOut;
         
-        float firstRingBase = dropTime-dist + ringSinAdd * TAU;
+        float firstRingBase = dropTime-dist;
         float firstRingMult = ringSinMult * (1.0/TAU);
         float firstRing = sin(clamp(firstRingBase,0.0,0.25) * firstRingMult) * ringFadeOut;
         

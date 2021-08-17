@@ -41,6 +41,7 @@ void main()
 {
     vec2 fragCoord = gl_FragCoord.xy;
     vec2 pixelStep = vec2(1.0 / iResolution.x, 1.0 / iResolution.y);
+    float invDur = 1.0 / duration;
 
     //Fixing aspect ratio
     float actualAspect = getAspect(iResolution);
@@ -72,7 +73,7 @@ void main()
     
     //Output color
     vec3 col = vec3(0.0,0.0,0.0);
-    col = mix(vec3(0.0,0.0,0.0), tex_b_warped, clamp(dropBufferTex.z, 0.0, 1.0));
+    col = mix(tex_a_warped, tex_b_warped, clamp(dropBufferTex.z, 0.0, 1.0));
     //col = tex_b_warped;
     //if (uvCorrected.x > 0.5)
     //col = vec3(warpEffect.x * 5.0, warpEffect.y * 5.0, 0.0);
